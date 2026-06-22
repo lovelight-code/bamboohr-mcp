@@ -1,0 +1,28 @@
+bamboohr-mcp
+============
+
+A read-only BambooHR MCP server maintained by Lovelight for the Lighthouse
+platform (and intended to be reusable by future Lovelight Claude
+integrations).
+
+This project is a fork of:
+
+  mcp-bamboohr  —  Copyright (c) 2025 Evrim Alacan
+  https://github.com/evrimalacan/mcp-bamboohr  —  MIT License
+
+used and modified under the terms of the MIT License (see LICENSE).
+
+Modifications from upstream
+---------------------------
+- Removed all write capability: the HTTP client exposes only get/getBuffer
+  (post/put/delete deleted) so the write surface cannot be reintroduced by
+  accident. Read-only by construction.
+- Added a BAMBOO_BASE_URL override so the server can be pointed at a
+  loopback token-proxy, and made the BambooHR credential optional/injectable
+  (proxy mode) rather than a hardcoded boot-time singleton.
+- Conditional auth: no Authorization header is sent in proxy mode (the
+  upstream proxy injects a fresh OAuth Bearer per request).
+
+If read tools are later ported from other MIT-licensed BambooHR MCP
+servers (e.g. https://github.com/iseletsk/cl-bamboohr-mcp), add the
+corresponding attribution here.

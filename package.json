@@ -1,0 +1,85 @@
+{
+  "name": "@lovelight-code/bamboohr-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Read-only BambooHR MCP server (Lovelight fork of evrimalacan/mcp-bamboohr)",
+  "main": "build/index.js",
+  "bin": {
+    "bamboohr-mcp": "build/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js",
+    "dev": "tsx --watch src/index.ts",
+    "test": "jest",
+    "clean": "rm -rf build",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "bamboohr",
+    "api",
+    "server",
+    "hr",
+    "model-context-protocol",
+    "read-only"
+  ],
+  "author": "Lovelight",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.5",
+    "axios": "^1.6.0",
+    "dotenv": "^17.2.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.18.0",
+    "jest": "^30.1.3",
+    "ts-jest": "^29.1.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lovelight-code/bamboohr-mcp.git"
+  },
+  "bugs": "https://github.com/lovelight-code/bamboohr-mcp/issues",
+  "homepage": "https://github.com/lovelight-code/bamboohr-mcp#readme",
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.test.ts",
+      "**/?(*.)+(spec|test).ts"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/**/*.d.ts",
+      "!src/__tests__/**",
+      "!src/index.ts"
+    ],
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ],
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    }
+  }
+}

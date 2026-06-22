@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Coverage
+coverage/
+
+# Environment files
+.env
+.env.local
+
+# Logs
+*.log
+logs
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Editor / OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
