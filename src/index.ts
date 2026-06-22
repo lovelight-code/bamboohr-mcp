@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// bamboohr-mcp — a read-only BambooHR MCP server (Lovelight fork of
+// bamboohr-mcp — a read-only BambooHR MCP server (a fork of
 // evrimalacan/mcp-bamboohr). Every registered tool is a GET; the HTTP
 // client exposes no write methods. See README + NOTICE.
 

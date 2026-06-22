@@ -1,9 +1,8 @@
 bamboohr-mcp
 ============
 
-A read-only BambooHR MCP server maintained by Lovelight for the Lighthouse
-platform (and intended to be reusable by future Lovelight Claude
-integrations).
+A read-only BambooHR MCP server, forked and maintained as a standalone tool
+for exposing BambooHR to an AI assistant safely.
 
 This project is a fork of:
 

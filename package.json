@@ -1,8 +1,8 @@
 {
-  "name": "@lovelight-code/bamboohr-mcp",
-  "version": "0.1.0",
+  "name": "bamboohr-mcp",
+  "version": "0.1.2",
   "private": true,
-  "description": "Read-only BambooHR MCP server (Lovelight fork of evrimalacan/mcp-bamboohr)",
+  "description": "Read-only BambooHR MCP server (a fork of evrimalacan/mcp-bamboohr)",
   "main": "build/index.js",
   "bin": {
     "bamboohr-mcp": "build/index.js"
@@ -25,7 +25,7 @@
     "model-context-protocol",
     "read-only"
   ],
-  "author": "Lovelight",
+  "author": "bamboohr-mcp contributors",
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.5",

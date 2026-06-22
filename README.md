@@ -1,16 +1,16 @@
 # bamboohr-mcp
 
 A **read-only** [Model Context Protocol](https://modelcontextprotocol.io) server
-for BambooHR, maintained by Lovelight for the Lighthouse platform.
+for BambooHR.
 
 This is a fork of [evrimalacan/mcp-bamboohr](https://github.com/evrimalacan/mcp-bamboohr)
 (MIT). See [NOTICE](NOTICE) for attribution and the full list of changes.
 
 ## Why this fork
 
-Lighthouse exposes BambooHR to a per-user AI assistant. BambooHR is
-sensitive HR data, so the design priorities are: **read-only by
-construction**, **least privilege**, and **the workspace process holds no
+BambooHR is sensitive HR data, so this fork hardens the upstream server for
+exposing it to an AI assistant safely. Design priorities: **read-only by
+construction**, **least privilege**, and **the host process holds no
 credential**. The upstream server is a clean, well-tested base; this fork
 hardens it for that posture:
 
@@ -30,7 +30,7 @@ hardens it for that posture:
 
 Two shapes (see [.env.example](.env.example)):
 
-**Proxied (the Lighthouse posture) — recommended for shared/sensitive use:**
+**Proxied (recommended for shared / sensitive use):**
 
 ```jsonc
 {
@@ -82,9 +82,9 @@ Two shapes (see [.env.example](.env.example)):
 | `get-meta-fields` | Discover available BambooHR data fields |
 
 > **Egress note.** Some tools (directory, file download) can return large
-> volumes of PII. In the Lighthouse deployment, row/size caps and field
-> scoping are enforced at the loopback proxy in front of this server, not
-> in the tool layer — keep that boundary if you redeploy elsewhere.
+> volumes of PII. For shared / sensitive deployments, enforce row/size caps
+> and field scoping at the proxy in front of this server, rather than
+> trusting the tool layer.
 
 ## Development
 
@@ -100,8 +100,8 @@ TypeScript (strict), ESM, Node ≥22. Tests run under Jest.
 ## Scope
 
 Read-only data access only. There are deliberately no write tools. Adding any
-write capability is an explicit decision (it would change the security
-posture and, in Lighthouse, requires an ADR) — not a casual PR.
+write capability is an explicit decision that changes the security posture —
+not a casual PR.
 
 ## License
 

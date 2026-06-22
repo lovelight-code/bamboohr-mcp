@@ -22,7 +22,7 @@ export interface BambooConfig {
  *    derived as `https://{companyDomain}.bamboohr.com/api/v1` and the
  *    client attaches HTTP Basic auth itself.
  *
- * 2. **Proxied / credential-free** (the Lighthouse posture): set
+ * 2. **Proxied / credential-free** (recommended for shared/sensitive use): set
  *    `BAMBOO_BASE_URL` to a loopback token-proxy (e.g.
  *    `http://127.0.0.1:7339`). The proxy injects `Authorization` on every
  *    forwarded request, so this process holds **no credential** and sets
