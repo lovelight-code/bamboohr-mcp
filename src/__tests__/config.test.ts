@@ -80,31 +80,31 @@ describe('Config', () => {
 
   describe('with BAMBOO_BASE_URL override (proxy mode)', () => {
     it('should use the override and not require a token or company domain', () => {
-      process.env.BAMBOO_BASE_URL = 'http://127.0.0.1:7337';
+      process.env.BAMBOO_BASE_URL = 'http://127.0.0.1:7339';
       // No BAMBOO_API_TOKEN, no BAMBOO_COMPANY_DOMAIN
 
       const { bambooConfig } = require('../config');
 
-      expect(bambooConfig.baseUrl).toBe('http://127.0.0.1:7337');
+      expect(bambooConfig.baseUrl).toBe('http://127.0.0.1:7339');
       expect(bambooConfig.apiToken).toBeNull();
       expect(bambooConfig.companyDomain).toBeNull();
     });
 
     it('should strip a trailing slash from the override', () => {
-      process.env.BAMBOO_BASE_URL = 'http://127.0.0.1:7337/';
+      process.env.BAMBOO_BASE_URL = 'http://127.0.0.1:7339/';
 
       const { bambooConfig } = require('../config');
 
-      expect(bambooConfig.baseUrl).toBe('http://127.0.0.1:7337');
+      expect(bambooConfig.baseUrl).toBe('http://127.0.0.1:7339');
     });
 
     it('should prefer the override over a derived company-domain host', () => {
-      process.env.BAMBOO_BASE_URL = 'http://127.0.0.1:7337';
+      process.env.BAMBOO_BASE_URL = 'http://127.0.0.1:7339';
       process.env.BAMBOO_COMPANY_DOMAIN = 'test-company';
 
       const { bambooConfig } = require('../config');
 
-      expect(bambooConfig.baseUrl).toBe('http://127.0.0.1:7337');
+      expect(bambooConfig.baseUrl).toBe('http://127.0.0.1:7339');
     });
   });
 

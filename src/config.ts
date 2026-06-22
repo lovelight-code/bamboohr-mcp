@@ -24,7 +24,7 @@ export interface BambooConfig {
  *
  * 2. **Proxied / credential-free** (the Lighthouse posture): set
  *    `BAMBOO_BASE_URL` to a loopback token-proxy (e.g.
- *    `http://127.0.0.1:7337`). The proxy injects `Authorization` on every
+ *    `http://127.0.0.1:7339`). The proxy injects `Authorization` on every
  *    forwarded request, so this process holds **no credential** and sets
  *    no auth header. `BAMBOO_API_TOKEN` is then optional.
  *

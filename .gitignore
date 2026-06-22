@@ -8,9 +8,10 @@ dist/
 # Coverage
 coverage/
 
-# Environment files
+# Environment files (never commit real creds; .env.example is the template)
 .env
-.env.local
+.env.*
+!.env.example
 
 # Logs
 *.log

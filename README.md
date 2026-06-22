@@ -41,7 +41,7 @@ Two shapes (see [.env.example](.env.example)):
       "type": "stdio",
       "env": {
         // A loopback proxy injects Authorization; no token here.
-        "BAMBOO_BASE_URL": "http://127.0.0.1:7337"
+        "BAMBOO_BASE_URL": "http://127.0.0.1:7339"
       }
     }
   }
