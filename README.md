@@ -86,6 +86,20 @@ Two shapes (see [.env.example](.env.example)):
 > and field scoping at the proxy in front of this server, rather than
 > trusting the tool layer.
 
+## Activating / deactivating tools
+
+Set `BAMBOO_ENABLED_TOOLS` to a comma- or space-separated allowlist to control
+which tools register. Unset = all tools. This lets you switch tools on/off by
+**config alone** — no code change — which is the clean way to keep tools whose
+BambooHR OAuth scope you didn't grant switched off, so the agent is never
+offered a tool that would `403`. Unknown names are warned and ignored (never
+fail the server). Example (the read-only set covered by directory + employee
+name/job/photo + time-off scopes):
+
+```
+BAMBOO_ENABLED_TOOLS=get-employee,get-employee-photo,get-employee-directory,estimate-time-off-balance,get-time-off-requests,get-whos-out,get-meta-fields
+```
+
 ## Development
 
 ```bash
